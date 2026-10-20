@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#101522">
+<title>Hoang Long Search</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;background:#101522;color:#fff;
+ font-family:Arial,sans-serif;min-height:100vh;
+ display:flex;flex-direction:column;
+}
+header{padding:22px;color:#aab5cb;font-size:14px}
+main{
+ width:100%;max-width:650px;margin:auto;
+ padding:20px;text-align:center;
+}
+.logo{
+ display:flex;justify-content:center;align-items:center;
+ gap:12px;margin-bottom:15px;
+}
+.badge{
+ background:#4285f4;border-radius:15px;
+ width:58px;height:58px;display:grid;
+ place-items:center;font-size:25px;font-weight:bold;
+}
+h1{font-size:35px;margin:0}
+p{color:#aab5cb;font-size:14px;margin:18px 0 27px}
+form{
+ display:flex;gap:8px;padding:7px;
+ border:1px solid #35415a;border-radius:18px;
+ background:#1c263a;
+}
+input{
+ flex:1;min-width:0;background:transparent;
+ border:0;outline:0;color:white;
+ padding:12px;font-size:16px;
+}
+button{
+ border:0;border-radius:12px;padding:12px 16px;
+ background:#4285f4;color:white;font-weight:bold;
+}
+.shortcuts{
+ display:flex;justify-content:center;gap:12px;
+ flex-wrap:wrap;margin-top:25px;
+}
+.shortcuts a{
+ color:#dbe5fa;text-decoration:none;
+ background:#1c263a;padding:12px 15px;
+ border-radius:12px;font-size:14px;
+}
+footer{text-align:center;padding:25px;color:#75829b;font-size:12px}
+</style>
+</head>
+<body>
+<header>HL · Hoang Long Search</header>
+<main>
+ <div class="logo">
+  <div class="badge">HL</div>
+  <h1>Hoang Long</h1>
+ </div>
+ <p>Cùng bạn khám phá thế giới Internet</p>
+ <form id="search">
+  <input id="q" placeholder="Nhập nội dung tìm kiếm..."
+   aria-label="Nội dung tìm kiếm" required>
+  <button type="submit">Tìm</button>
+ </form>
+ <div class="shortcuts">
+  <a href="https://www.google.com">Google</a>
+  <a href="https://www.youtube.com">YouTube</a>
+  <a href="https://www.wikipedia.org">Wikipedia</a>
+ </div>
+</main>
+<footer>Hoang Long Search · Tìm kiếm thông minh</footer>
+<script>
+document.getElementById("search").addEventListener("submit",function(e){
+ e.preventDefault();
+ const q=document.getElementById("q").value.trim();
+ if(q)location.href="https://www.google.com/search?q="+encodeURIComponent(q);
+});
+</script>
+</body>
+</html>
